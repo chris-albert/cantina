@@ -13,11 +13,17 @@ object Dependencies {
   }
 
   object ZIO {
-    lazy val core        = "dev.zio" %% "zio"                 % "1.0.0-RC21-2"
+
+    private val zioVersion = "1.0.0-RC21-2"
+
+    lazy val core        = "dev.zio" %% "zio"                 % zioVersion
     lazy val config      = "dev.zio" %% "zio-config"          % "1.0.0-RC25"
     lazy val typesafe    = "dev.zio" %% "zio-config-typesafe" % "1.0.0-RC25"
     lazy val catsInterop = "dev.zio" %% "zio-interop-cats"    % "2.1.4.0-RC17"
     lazy val metrics     = "dev.zio" %% "zio-metrics-statsd"  % "0.2.8"
+
+    lazy val test   = "dev.zio" %% "zio-test"     % zioVersion % "test"
+    lazy val testSbt ="dev.zio" %% "zio-test-sbt" % zioVersion % "test"
   }
 
   object Http4s {

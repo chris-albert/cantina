@@ -1,11 +1,14 @@
 package io.lbert
 
+import java.time.DateTimeException
+
 sealed trait Error
 
 object Error {
 
   final case class ConfigError(error: Throwable) extends Error
   final case class HTTPClientError(error: Throwable) extends Error
+  final case class TimeError(dte: DateTimeException) extends Error
 
   sealed trait FileError extends Error
 

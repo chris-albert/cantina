@@ -22,7 +22,8 @@ lazy val root = (project in file(".")).
       Dependencies.Cats.core,
       Dependencies.Cats.effect,
       Dependencies.Logging.logback,
-      Dependencies.Test.scalaTest % Test
+      Dependencies.ZIO.test,
+      Dependencies.ZIO.testSbt
     ),
     scalacOptions ++= Seq(
       "-encoding", "utf8",
@@ -34,6 +35,7 @@ lazy val root = (project in file(".")).
       "-language:existentials",
       "-language:postfixOps"
     ),
+    testFrameworks += new TestFramework("zio.test.sbt.ZTestFramework"),
     resolvers += Resolver.sonatypeRepo("releases"),
     addCompilerPlugin(Dependencies.Plugins.kindProjector),
     addCompilerPlugin(Dependencies.Plugins.betterMonadicFor)
