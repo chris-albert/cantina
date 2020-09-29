@@ -19,15 +19,15 @@ be ordered or reserved.
 [Order Management System](https://en.wikipedia.org/wiki/Order_management_system)
 
  - Content management
-  - Product info
-  - Pricing
+   - Product info
+   - Pricing
  - Inventory management
-  - Quantity
-  - Location
+   - Quantity
+   - Location
  - Order fulfillment
-  - Picking
-  - Shipping
+   - Picking
+   - Shipping
  - Accounting
-  - Payments
-  - Invoicing
+   - Payments
+   - Invoicing
   

@@ -1,6 +1,19 @@
 package io.lbert.data
 
+import zio.IO
+
+trait Product {
+  def getById(id: Product.Id): IO[Error, Option[ProductView]]
+
+  def create(name: WithId[Product.Id, Product.Name]): IO[Error, Unit]
+  def delete(id: Product.Id): IO[Error, Unit]
+
+  def updateName(name: WithId[Product.Id, Product.Name]): IO[Error, Unit]
+}
+
 object Product {
+
+  final case class Id(aggregateId: AggregateId)
 
   final case class Name(name: String)
 
